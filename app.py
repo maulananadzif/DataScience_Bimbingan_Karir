@@ -124,8 +124,7 @@ st.set_page_config(
 st.title("Hungarian Heart Disease")
 
 # Menampilkan akurasi model
-st.write(
-    f"**_Model's Accuracy_** :  :green[**{accuracy}**]% (:red[_Do not copy outright_])")
+st.write(f"**_Model's Accuracy_** :  :green[**{accuracy}**]% (:red[_Do not copy outright_])")
 st.write("")
 
 # Membuat tab untuk prediksi tunggal dan prediksi ganda
@@ -137,15 +136,12 @@ with tab1:
     st.sidebar.header("**User Input** Sidebar")
 
     # Menambahkan input usia
-    age = st.sidebar.number_input(
-        label=":violet[**Age**]", min_value=df_final['age'].min(), max_value=df_final['age'].max())
-    st.sidebar.write(f":orange[Min] value: :orange[**
-        {df_final['age'].min()}**], :red[Max] value: :red[**{df_final['age'].max()}**]")
+    age = st.sidebar.number_input(label=":violet[**Age**]", min_value=df_final['age'].min(), max_value=df_final['age'].max())
+    st.sidebar.write(f":orange[Min] value: :orange[**{df_final['age'].min()}**], :red[Max] value: :red[**{df_final['age'].max()}**]")
     st.sidebar.write("")
 
     # Menambahkan input jenis kelamin
-    sex_sb = st.sidebar.selectbox(
-        label=":violet[**Sex**]", options=["Male", "Female"])
+    sex_sb = st.sidebar.selectbox(label=":violet[**Sex**]", options=["Male", "Female"])
     st.sidebar.write("")
     st.sidebar.write("")
     if sex_sb == "Male":
@@ -154,8 +150,7 @@ with tab1:
         sex = 0
 
     # Menambahkan input jenis nyeri dada
-    cp_sb = st.sidebar.selectbox(label=":violet[**Chest pain type**]", options=[
-                                 "Typical angina", "Atypical angina", "Non-anginal pain", "Asymptomatic"])
+    cp_sb = st.sidebar.selectbox(label=":violet[**Chest pain type**]", options=["Typical angina", "Atypical angina", "Non-anginal pain", "Asymptomatic"])
     st.sidebar.write("")
     st.sidebar.write("")
     if cp_sb == "Typical angina":
@@ -168,22 +163,17 @@ with tab1:
         cp = 4
 
     # Menambahkan input tekanan darah istirahat
-    trestbps = st.sidebar.number_input(label=":violet[**Resting blood pressure** (in mm Hg on admission to the hospital)]",
-                                       min_value=df_final['trestbps'].min(), max_value=df_final['trestbps'].max())
-    st.sidebar.write(f":orange[Min] value: :orange[**{df_final['trestbps'].min(
-    )}**], :red[Max] value: :red[**{df_final['trestbps'].max()}**]")
+    trestbps = st.sidebar.number_input(label=":violet[**Resting blood pressure** (in mm Hg on admission to the hospital)]", min_value=df_final['trestbps'].min(), max_value=df_final['trestbps'].max())
+    st.sidebar.write(f":orange[Min] value: :orange[**{df_final['trestbps'].min()}**], :red[Max] value: :red[**{df_final['trestbps'].max()}**]")
     st.sidebar.write("")
 
     # Menambahkan input kolesterol serum
-    chol = st.sidebar.number_input(label=":violet[**Serum cholestoral** (in mg/dl)]",
-                                   min_value=df_final['chol'].min(), max_value=df_final['chol'].max())
-    st.sidebar.write(f":orange[Min] value: :orange[**{df_final['chol'].min(
-    )}**], :red[Max] value: :red[**{df_final['chol'].max()}**]")
+    chol = st.sidebar.number_input(label=":violet[**Serum cholestoral** (in mg/dl)]", min_value=df_final['chol'].min(), max_value=df_final['chol'].max())
+    st.sidebar.write(f":orange[Min] value: :orange[**{df_final['chol'].min()}**], :red[Max] value: :red[**{df_final['chol'].max()}**]")
     st.sidebar.write("")
 
     # Menambahkan input gula darah puasa
-    fbs_sb = st.sidebar.selectbox(
-        label=":violet[**Fasting blood sugar > 120 mg/dl?**]", options=["False", "True"])
+    fbs_sb = st.sidebar.selectbox(label=":violet[**Fasting blood sugar > 120 mg/dl?**]", options=["False", "True"])
     st.sidebar.write("")
     st.sidebar.write("")
     if fbs_sb == "False":
@@ -192,8 +182,7 @@ with tab1:
         fbs = 1
 
     # Menambahkan input hasil elektrokardiografi istirahat
-    restecg_sb = st.sidebar.selectbox(label=":violet[**Resting electrocardiographic results**]", options=[
-                                      "Normal", "Having ST-T wave abnormality", "Showing left ventricular hypertrophy"])
+    restecg_sb = st.sidebar.selectbox(label=":violet[**Resting electrocardiographic results**]", options=["Normal", "Having ST-T wave abnormality", "Showing left ventricular hypertrophy"])
     st.sidebar.write("")
     st.sidebar.write("")
     if restecg_sb == "Normal":
@@ -204,15 +193,12 @@ with tab1:
         restecg = 2
 
     # Menambahkan input detak jantung maksimum yang dicapai
-    thalach = st.sidebar.number_input(
-        label=":violet[**Maximum heart rate achieved**]", min_value=df_final['thalach'].min(), max_value=df_final['thalach'].max())
-    st.sidebar.write(f":orange[Min] value: :orange[**{df_final['thalach'].min(
-    )}**], :red[Max] value: :red[**{df_final['thalach'].max()}**]")
+    thalach = st.sidebar.number_input(label=":violet[**Maximum heart rate achieved**]", min_value=df_final['thalach'].min(), max_value=df_final['thalach'].max())
+    st.sidebar.write(f":orange[Min] value: :orange[**{df_final['thalach'].min()}**], :red[Max] value: :red[**{df_final['thalach'].max()}**]")
     st.sidebar.write("")
 
     # Menambahkan input angina yang diinduksi oleh latihan
-    exang_sb = st.sidebar.selectbox(
-        label=":violet[**Exercise induced angina?**]", options=["No", "Yes"])
+    exang_sb = st.sidebar.selectbox(label=":violet[**Exercise induced angina?**]", options=["No", "Yes"])
     st.sidebar.write("")
     st.sidebar.write("")
     if exang_sb == "No":
@@ -222,10 +208,8 @@ with tab1:
         exang = 1
 
     # Menambahkan input depresi ST
-    oldpeak = st.sidebar.number_input(label=":violet[**ST depression induced by exercise relative to rest**]",
-                                      min_value=df_final['oldpeak'].min(), max_value=df_final['oldpeak'].max())
-    st.sidebar.write(f":orange[Min] value: :orange[**{df_final['oldpeak'].min(
-    )}**], :red[Max] value: :red[**{df_final['oldpeak'].max()}**]")
+    oldpeak = st.sidebar.number_input(label=":violet[**ST depression induced by exercise relative to rest**]", min_value=df_final['oldpeak'].min(), max_value=df_final['oldpeak'].max())
+    st.sidebar.write(f":orange[Min] value: :orange[**{df_final['oldpeak'].min()}**], :red[Max] value: :red[**{df_final['oldpeak'].max()}**]")
     st.sidebar.write("")
 
     # Menampilkan data input pengguna sebagai DataFrame
