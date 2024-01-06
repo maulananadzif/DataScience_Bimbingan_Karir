@@ -139,8 +139,8 @@ with tab1:
     # Menambahkan input usia
     age = st.sidebar.number_input(
         label=":violet[**Age**]", min_value=df_final['age'].min(), max_value=df_final['age'].max())
-    st.sidebar.write(f":orange[Min] value: :orange[**{
-                     df_final['age'].min()}**], :red[Max] value: :red[**{df_final['age'].max()}**]")
+    st.sidebar.write(f":orange[Min] value: :orange[**
+        {df_final['age'].min()}**], :red[Max] value: :red[**{df_final['age'].max()}**]")
     st.sidebar.write("")
 
     # Menambahkan input jenis kelamin
